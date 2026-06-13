@@ -76,3 +76,18 @@ document
 .getElementById("particles")
 .appendChild(p);
 }
+
+function abrirSobre(){
+
+const sobre =
+document.querySelector(".envelope");
+
+sobre.classList.add("abierto");
+
+setTimeout(()=>{
+
+nextScreen(4);
+
+},1500);
+
+}
