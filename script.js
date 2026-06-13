@@ -52,7 +52,15 @@ clearInterval(intervalo);
 }
 
 function mostrarSorpresa(){
+
 document.getElementById("popup").style.display="flex";
+
+confetti({
+    particleCount:150,
+    spread:120,
+    origin:{y:0.6}
+});
+
 }
 
 function cerrarPopup(){
