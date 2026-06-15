@@ -99,3 +99,32 @@ nextScreen(4);
 },1500);
 
 }
+let musicPlaying = false;
+
+function toggleMusic(){
+
+const music =
+document.getElementById("bgMusic");
+
+const btn =
+document.getElementById("musicBtn");
+
+if(!musicPlaying){
+
+music.play();
+
+btn.innerHTML = "⏸️ Pausar";
+
+musicPlaying = true;
+
+}else{
+
+music.pause();
+
+btn.innerHTML = "🎵 Música";
+
+musicPlaying = false;
+
+}
+
+}
