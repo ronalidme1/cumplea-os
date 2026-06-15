@@ -128,3 +128,23 @@ musicPlaying = false;
 }
 
 }
+
+function crearEstrellaFugaz(){
+
+const estrella =
+document.createElement("div");
+
+estrella.classList.add("shooting-star");
+
+estrella.style.top =
+Math.random()*200 + "px";
+
+document.body.appendChild(estrella);
+
+setTimeout(()=>{
+estrella.remove();
+},2000);
+
+}
+
+setInterval(crearEstrellaFugaz,15000);
