@@ -148,3 +148,24 @@ estrella.remove();
 }
 
 setInterval(crearEstrellaFugaz,15000);
+
+function mostrarPibble(){
+
+document
+.getElementById("pibbleModal")
+.style.display="flex";
+
+confetti({
+particleCount:200,
+spread:180
+});
+
+}
+
+function cerrarPibble(){
+
+document
+.getElementById("pibbleModal")
+.style.display="none";
+
+}
