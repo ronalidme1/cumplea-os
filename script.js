@@ -1,171 +1,54 @@
-function nextScreen(numero){
+let currentScreen = 1;
+const music = document.getElementById("bgMusic");
 
-document.querySelectorAll(".screen").forEach(s=>{
-s.classList.remove("active");
-});
+// CAMBIAR PANTALLA
+function nextScreen(num) {
 
-document
-.getElementById("pantalla"+numero)
-.classList.add("active");
+    document.querySelectorAll(".screen").forEach(s => {
+        s.classList.remove("active");
+    });
 
-if(numero===4){
-escribirMensaje();
-}
-}
-
-const texto = `
-Hoy es tu cumpleaños y quería aprovechar
-para desearte que tengas un día increíble.
-
-Que disfrutes mucho cada momento,
-que recibas muchas sonrisas
-y que este nuevo año de vida venga acompañado
-de cosas buenas.
-
-Sigue persiguiendo tus metas
-y disfrutando cada etapa que te toque vivir.
-
-✨ Feliz cumpleaños. ✨
-`;
-
-function escribirMensaje(){
-
-let i=0;
-
-const mensaje =
-document.getElementById("mensaje");
-
-mensaje.innerHTML="";
-
-const intervalo=setInterval(()=>{
-
-mensaje.innerHTML += texto.charAt(i);
-
-i++;
-
-if(i>=texto.length){
-clearInterval(intervalo);
+    document.getElementById("pantalla" + num).classList.add("active");
+    currentScreen = num;
 }
 
-},35);
-
+// INICIAR (y música)
+function iniciarExperiencia() {
+    music.play();
+    nextScreen(2);
 }
 
-function mostrarSorpresa(){
-
-document.getElementById("popup").style.display="flex";
-
-confetti({
-    particleCount:150,
-    spread:120,
-    origin:{y:0.6}
-});
-
+// TOGGLE MUSICA
+function toggleMusic() {
+    if (music.paused) {
+        music.play();
+    } else {
+        music.pause();
+    }
 }
 
-function cerrarPopup(){
-document.getElementById("popup").style.display="none";
+// MENSAJES ALEATORIOS
+const mensajes = [
+"✨ Que tengas un año lleno de cosas bonitas",
+"🎂 Hoy es tu día, disfrútalo al máximo",
+"🍀 La suerte está de tu lado",
+"🌟 Nunca dejes de sonreír",
+"🐶 El perrito dice: feliz cumpleaños!",
+"🎈 Que todos tus deseos se cumplan"
+];
+
+function nuevoMensaje() {
+    const random = mensajes[Math.floor(Math.random() * mensajes.length)];
+    document.getElementById("mensajeAleatorio").innerText = random;
 }
 
-for(let i=0;i<40;i++){
+// FINAL
+function finalCumple() {
 
-let p=document.createElement("div");
+    confetti({
+        particleCount: 200,
+        spread: 120
+    });
 
-p.classList.add("particle");
-
-p.style.left=Math.random()*100+"%";
-
-p.style.animationDuration=
-(4+Math.random()*6)+"s";
-
-p.style.opacity=Math.random();
-
-document
-.getElementById("particles")
-.appendChild(p);
-}
-
-function abrirSobre(){
-
-const sobre =
-document.querySelector(".envelope");
-
-sobre.classList.add("abierto");
-
-setTimeout(()=>{
-
-nextScreen(4);
-
-},1500);
-
-}
-let musicPlaying = false;
-
-function toggleMusic(){
-
-const music =
-document.getElementById("bgMusic");
-
-const btn =
-document.getElementById("musicBtn");
-
-if(!musicPlaying){
-
-music.play();
-
-btn.innerHTML = "⏸️ Pausar";
-
-musicPlaying = true;
-
-}else{
-
-music.pause();
-
-btn.innerHTML = "🎵 Música";
-
-musicPlaying = false;
-
-}
-
-}
-
-function crearEstrellaFugaz(){
-
-const estrella =
-document.createElement("div");
-
-estrella.classList.add("shooting-star");
-
-estrella.style.top =
-Math.random()*200 + "px";
-
-document.body.appendChild(estrella);
-
-setTimeout(()=>{
-estrella.remove();
-},2000);
-
-}
-
-setInterval(crearEstrellaFugaz,15000);
-
-function mostrarPibble(){
-
-document
-.getElementById("pibbleModal")
-.style.display="flex";
-
-confetti({
-particleCount:200,
-spread:180
-});
-
-}
-
-function cerrarPibble(){
-
-document
-.getElementById("pibbleModal")
-.style.display="none";
-
+    alert("🎉 ¡Feliz Cumpleaños Korina! 🎂");
 }
