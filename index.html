@@ -6,144 +6,92 @@
 
 <title>Feliz Cumpleaños Korina</title>
 
-<link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
-
 <link rel="stylesheet" href="style.css">
 </head>
+
+<body>
+
 <audio id="bgMusic" loop>
     <source src="just-the-way-you-are.mp3" type="audio/mpeg">
 </audio>
 
-<button id="musicBtn" onclick="toggleMusic()">
-    🎵 Música
-</button>
-
-<button id="secretBtn" onclick="mostrarPibble()">
-🐶
-</button>
-
-<div id="pibbleModal">
-
-<div class="pibble-content">
-
-<h2>🐶 ¡Encontraste el secreto!</h2>
-
-<img
-src="https://media.tenor.com/3f5M8J6jYlEAAAAi/dog-dance.gif"
-width="250"
->
-
-<p>
-Modo Pibble activado.
-</p>
-
-<button onclick="cerrarPibble()">
-Cerrar
-</button>
-
-</div>
-
-</div>
-<body>
-
 <div id="particles"></div>
 
+<!-- BOTÓN MUSICA -->
+<button id="musicBtn" onclick="toggleMusic()">🎵 Música</button>
+
+<!-- PANTALLA 1 -->
 <section id="pantalla1" class="screen active">
-
     <div class="card">
-
         <h1>✨ Hola, Korina</h1>
+        <p>Antes de continuar tengo un regalo para ti 🎁</p>
 
-        <p>
-            Antes de continuar...
-            <br>
-            tengo algo que mostrarte.
-        </p>
-
-        <button onclick="nextScreen(2)">
-            Continuar
+        <button onclick="iniciarExperiencia()">
+            Abrir regalo
         </button>
-
     </div>
-
 </section>
 
+<!-- PANTALLA 2: MENSAJE -->
 <section id="pantalla2" class="screen">
-
     <div class="card">
+        <h2>🎂 Feliz Cumpleaños</h2>
 
-        <h2>😊 No te tomará mucho tiempo</h2>
-
-        <p>
-            Prometido.
+        <p id="mensajeInicial">
+            Hoy es un día especial...
         </p>
 
         <button onclick="nextScreen(3)">
-            Ver más
+            Ver sorpresa 🐶
         </button>
-
     </div>
-
 </section>
 
+<!-- PANTALLA 3: PERRITO -->
 <section id="pantalla3" class="screen">
 
-<div class="envelope-container">
+    <div class="card">
+        <h2>🐶 Perrito de la suerte</h2>
 
-<div class="envelope" onclick="abrirSobre()">
-
-<div class="flap"></div>
-
-<div class="letter">
-💌
-</div>
-
-</div>
-
-<p class="texto-sobre">
-Haz clic sobre el sobre
-</p>
-
-</div>
-
-</section>
-
-<section id="pantalla4" class="screen">
-
-    <div class="card carta">
-
-        <h1>🎂 Feliz Cumpleaños Korina</h1>
-
-        <p id="mensaje"></p>
-
-        <button onclick="mostrarSorpresa()">
-            🎁 Abrir sorpresa
-        </button>
-
-    </div>
-
-</section>
-
-<div id="popup">
-
-    <div class="popup-content">
-
-        <h2>🎉 Feliz Cumpleaños 🎉</h2>
+        <video width="260" autoplay loop muted playsinline>
+            <source src="perrito.mp4" type="video/mp4">
+        </video>
 
         <p>
-            Espero que tengas un día increíble
-            y que disfrutes cada momento.
+            Este es el perrito de la suerte, la alegría y las buenas vibras ✨
         </p>
 
-        <button onclick="cerrarPopup()">
-            Gracias ✨
+        <button onclick="nextScreen(4)">
+            Abrir cajita 🎁
+        </button>
+    </div>
+
+</section>
+
+<!-- PANTALLA 4: MENSAJES ALEATORIOS -->
+<section id="pantalla4" class="screen">
+
+    <div class="card">
+
+        <h2>🎁 Cajita de regalos</h2>
+
+        <p id="mensajeAleatorio">
+            Haz clic para abrir un mensaje
+        </p>
+
+        <button onclick="nuevoMensaje()">
+            Abrir 🎁
+        </button>
+
+        <button onclick="finalCumple()">
+            Finalizar 🎉
         </button>
 
     </div>
 
-</div>
-    
+</section>
+
 <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.9.3/dist/confetti.browser.min.js"></script>
 <script src="script.js"></script>
 
