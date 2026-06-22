@@ -1,5 +1,8 @@
-let currentScreen = 1;
-const music = document.getElementById("bgMusic");
+let music;
+
+window.onload = () => {
+    music = document.getElementById("bgMusic");
+};
 
 // CAMBIAR PANTALLA
 function nextScreen(num) {
