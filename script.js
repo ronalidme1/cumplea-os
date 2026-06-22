@@ -48,10 +48,10 @@ function nuevoMensaje() {
 // FINAL
 function finalCumple() {
 
+    nextScreen(5);
+
     confetti({
         particleCount: 200,
         spread: 120
     });
-
-    alert("🎉 ¡Feliz Cumpleaños Korina! 🎂");
 }
