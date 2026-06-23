@@ -41,7 +41,7 @@ const mensajes = [
 "💛 Hoy es un buen día para ser feliz sin motivo",
 "🚀 Que todo lo bueno te llegue sin que lo busques",
 "🌙 Sigue brillando incluso en los días normales",
-"💛 Siempre contaras conmigo",
+"💛 Siempre contaras conmigo"
 ];
 
 function nuevoMensaje() {
