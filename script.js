@@ -37,7 +37,7 @@ const mensajes = [
 "🍀 La suerte está de tu lado",
 "🌟 Nunca dejes de sonreír",
 "🐶 El perrito dice: feliz cumpleaños!",
-"🎈 Que todos tus deseos se cumplan"
+"🎈 Que todos tus deseos se cumplan",
 "💛 Hoy es un buen día para ser feliz sin motivo",
 "🚀 Que todo lo bueno te llegue sin que lo busques",
 "🌙 Sigue brillando incluso en los días normales",
